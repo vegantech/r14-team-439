@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+
+
+development:
+  <<: *default
+  database: geolinguist_development
+  username: <username>
+  password:
+
+test:
+  <<: *default
+  database: geolinguist_test
+  username: <username>
+  password:
+
+production:
+  <<: *default
+  database: geolinguist_production
+  username: <username>
+  password:
+
