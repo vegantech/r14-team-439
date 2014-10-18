@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/bfolkens/rails-csv-fixtures.git
+  revision: 674f02ea28cad307b09bce220cf2bb772fa02b50
+  specs:
+    rails-csv-fixtures (0.0.2)
+      rails (>= 3.2, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -113,6 +120,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.1.6)
+  rails-csv-fixtures!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

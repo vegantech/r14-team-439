@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+#Load craigslist sites
+ActiveRecord::Fixtures.create_fixtures(Rails.root.join("db","csv"),"cl_sites")
