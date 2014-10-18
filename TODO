@@ -1,1 +1,1 @@
-Put app in production mode (change/setup tokens, secrets, etc)
+Put app in production mode (change/setup tokens, secrets, etc)  RACK_ENV
