@@ -1,67 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>craigslist > sites</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="List of all international craigslist.org online classifieds sites">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=1">
-    <link type="text/css" rel="stylesheet" media="all" href="//www.craigslist.org/styles/cl.css?v=9d9b0a468df0a34860c5e75d9961e370">
-    <link type="text/css" rel="stylesheet" media="all" href="//www.craigslist.org/styles/leaflet-stock.css?v=ea2cbe352bcad5eae1c267a9dd15a5c1">
-    <link type="text/css" rel="stylesheet" media="all" href="//www.craigslist.org/styles/MarkerCluster.css?v=c9937ed03fbb57f185493cd8c283efeb">
-    <!--[if lt IE 9]>
-<script src="//www.craigslist.org/js/html5shiv.min.js?v=42e8031bc7ca9d67a48f4a5feff7bf29" type="text/javascript" ></script>
-<![endif]-->
-<!--[if lte IE 7]>
-<script src="//www.craigslist.org/js/json2.min.js?v=178d4ad319e0e0b4a451b15e49b71bec" type="text/javascript" ></script>
-<![endif]-->
-</head>
-
 <body class="sites">
-    <script type="text/javascript"><!--
-    function C(k){return(document.cookie.match('(^|; )'+k+'=([^;]*)')||0)[2]}
-    var pagetype, pagemode;
-    (function(){
-        var h = document.documentElement;
-        h.className = h.className.replace('no-js', 'js');
-        var b = document.body;
-        var bodyClassList = b.className.split(/\s+/);;
-        pagetype = bodyClassList[0];
-        var fmt = C('cl_fmt');
-        if (fmt) {
-            pagemode = fmt;
-            bodyClassList.push(fmt);
-        } else if (screen.width <= 480) {
-            pagemode = 'mobile';
-            bodyClassList.push(pagemode);
-        }
-        var width = window.innerWidth || document.documentElement.clientWidth;
-        if (width > 1000) { bodyClassList.push('w1024'); }
-        if (typeof catType !== 'undefined') {
-            var mode = (decodeURIComponent(C('cl_tocmode') || '').match(new RegExp(catType + ':([^,]+)', 'i')) || {})[1];
-            for (var i = 0, len = bodyClassList.length; i < len; i++){
-                if (bodyClassList[i] === 'map') { mode = undefined; }
-            }
-            if (mode) { bodyClassList.push(mode); }
-        }
-        b.className = bodyClassList.join(' ');
-    }());
---></script>
-
     <article id="pagecontainer">
         <div id="logo">craigslist</div>
-
-        <section class="body">
-            <div class="jump_to_continents">
-              <a href="#US">US</a>
-              <a href="#CA">Canada</a>
-              <a href="#EU">Europe</a>
-              <a href="#ASIA">Asia/Pacific/Middle East</a>
-              <a href="#OCEANIA">Oceania</a>
-              <a href="#LATAM">Latin America</a>
-              <a href="#AF">Africa</a>
-            </div>
-
-            <div id="map" style="border: 1px solid #551A8B; background-color: #71A4CD;"></div>
 
             <h1><a name="US"></a>US</h1>
             <div class="colmask">
@@ -1241,28 +1182,6 @@
         </section>
         <footer>
     
-    <ul class="clfooter">
-        <li>&copy; 2014 <span class="desktop">craigslist</span><span class="mobile">CL</span></li>
-        <li><a href="//www.craigslist.org/about/help/">help</a></li>
-        <li><a href="//www.craigslist.org/about/scams">safety</a></li>
-        <li class="desktop"><a href="//www.craigslist.org/about/privacy.policy">privacy</a></li>
-        <li class="desktop"><a href="https://forums.craigslist.org/?forumID=8">feedback</a></li>
-        <li class="desktop"><a href="//www.craigslist.org/about/craigslist_is_hiring">cl jobs</a></li>
-        <li><a href="//www.craigslist.org/about/terms.of.use">terms</a></li>
-        <li><a href="//www.craigslist.org/about/">about</a></li>
-        <li class="fsel desktop" data-mode="mobile"><a href="#">mobile</a></li>
-        <li class="fsel mobile" data-mode="regular"><a href="#">desktop</a></li>
-    </ul>
-</footer>
     </article>
-    <script src="//www.craigslist.org/js/general-concat.min.js?v=16aeaa317e1df16194edd22bec88eb5c" type="text/javascript" ></script>
-    <script type="text/javascript"><!--
-        var iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = '//www.' + CL.url.baseDomain + '/static/localstorage.html?v=51a29e41f8e978141e4085ed4a77d170';
-        document.body.insertBefore(iframe, null);
-    --></script>
-    <script src="//www.craigslist.org/js/leaflet-concat.min.js?v=1218ae639adbe8ffc16f31004007113d" type="text/javascript" ></script>
-    <script src="//www.craigslist.org/js/sites.min.js?v=ab3502ecd9a54496686a491db5050472" type="text/javascript" ></script>
 </body>
 </html>
