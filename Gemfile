@@ -44,6 +44,7 @@ gem 'feedjira'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "github_api"
 gem 'rails-bigint-pk', '~> 1.1.0'
 
 gem 'unicorn'
