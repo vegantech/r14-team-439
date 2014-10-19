@@ -1,6 +1,7 @@
+module LanguageRecognizer
 require 'set'
 
-languageReList = 
+LANG_LIST = 
 
 [
 
@@ -62,14 +63,16 @@ languageReList =
 
 ]
 
-def languageRecognizer(str, languageReList)
+def self.recognize(str)
   results = Set.new
-  languageReList.each do |lang|
+  LANG_LIST.each do |lang|
     re = Regexp.union lang[:terms]
     newstr = str.gsub(re, ' ')
     results.add(lang[:language]) if str != newstr
     str = newstr
   end
 
-  return results
+  results
+end
+
 end
