@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018220650) do
+ActiveRecord::Schema.define(version: 20141019082710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,92 @@ ActiveRecord::Schema.define(version: 20141018220650) do
     t.integer  "groovy",        default: 0, null: false
     t.integer  "msshell",       default: 0, null: false
     t.integer  "unixshell",     default: 0, null: false
+  end
+
+  create_table "github_commits", force: true do |t|
+    t.integer  "github_push_event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "github_commits", ["github_push_event_id"], name: "index_github_commits_on_github_push_event_id", using: :btree
+
+  create_table "github_push_events", force: true do |t|
+    t.integer  "github_repo_id"
+    t.integer  "github_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "github_push_events", ["github_repo_id"], name: "index_github_push_events_on_github_repo_id", using: :btree
+  add_index "github_push_events", ["github_user_id"], name: "index_github_push_events_on_github_user_id", using: :btree
+
+  create_table "github_repos", force: true do |t|
+    t.integer  "github_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "commit_count"
+  end
+
+  add_index "github_repos", ["github_user_id"], name: "index_github_repos_on_github_user_id", using: :btree
+
+  create_table "github_repos_languages", force: true do |t|
+    t.integer "github_repo_id"
+    t.integer "language_id"
+  end
+
+  add_index "github_repos_languages", ["github_repo_id"], name: "index_github_repos_languages_on_github_repo_id", using: :btree
+  add_index "github_repos_languages", ["language_id"], name: "index_github_repos_languages_on_language_id", using: :btree
+
+  create_table "github_users", force: true do |t|
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "github_users", ["location_id"], name: "index_github_users_on_location_id", using: :btree
+
+  create_table "languages", force: true do |t|
+    t.string   "name"
+    t.string   "abbreviation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "languages_listings", force: true do |t|
+    t.integer "language_id"
+    t.integer "listing_id"
+  end
+
+  add_index "languages_listings", ["language_id"], name: "index_languages_listings_on_language_id", using: :btree
+  add_index "languages_listings", ["listing_id"], name: "index_languages_listings_on_listing_id", using: :btree
+
+  create_table "listings", force: true do |t|
+    t.string   "link"
+    t.text     "title"
+    t.text     "snippet"
+    t.integer  "region_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "listings", ["region_id"], name: "index_listings_on_region_id", using: :btree
+
+  create_table "locations", force: true do |t|
+    t.integer  "region_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "locations", ["region_id"], name: "index_locations_on_region_id", using: :btree
+
+  create_table "regions", force: true do |t|
+    t.string   "name"
+    t.string   "abbreviation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
