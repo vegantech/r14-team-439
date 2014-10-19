@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :cl_sites
+  resources :cl_langs
   root 'cl_sites#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,7 @@
+<%= link_to "By Region", "/cl_sites" %>
+<h2>Languages</h2>
+
+Ruby <%= @rubysum %>
+<ul>
+  <%= render partial: 'cl_site', collection: @rubysites, locals: {lang: 'ruby'} %>
+</ul>
