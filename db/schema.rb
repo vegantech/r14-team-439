@@ -26,10 +26,34 @@ ActiveRecord::Schema.define(version: 20141018220650) do
     t.datetime "last_fetched"
     t.integer  "total_entries", default: 0, null: false
     t.integer  "no_matches",    default: 0, null: false
+    t.integer  "cplusplus",     default: 0, null: false
+    t.integer  "assembly",      default: 0, null: false
     t.integer  "ruby",          default: 0, null: false
     t.integer  "python",        default: 0, null: false
-    t.integer  "java",          default: 0, null: false
     t.integer  "javascript",    default: 0, null: false
+    t.integer  "php",           default: 0, null: false
+    t.integer  "perl",          default: 0, null: false
+    t.integer  "java",          default: 0, null: false
+    t.integer  "go",            default: 0, null: false
+    t.integer  "csharp",        default: 0, null: false
+    t.integer  "objectivec",    default: 0, null: false
+    t.integer  "clang",         default: 0, null: false
+    t.integer  "erlang",        default: 0, null: false
+    t.integer  "ocaml",         default: 0, null: false
+    t.integer  "coldfusion",    default: 0, null: false
+    t.integer  "haskell",       default: 0, null: false
+    t.integer  "fortran",       default: 0, null: false
+    t.integer  "cobol",         default: 0, null: false
+    t.integer  "lisp",          default: 0, null: false
+    t.integer  "scheme",        default: 0, null: false
+    t.integer  "scala",         default: 0, null: false
+    t.integer  "matlab",        default: 0, null: false
+    t.integer  "octave",        default: 0, null: false
+    t.integer  "pascal",        default: 0, null: false
+    t.integer  "clojure",       default: 0, null: false
+    t.integer  "groovy",        default: 0, null: false
+    t.integer  "msshell",       default: 0, null: false
+    t.integer  "unixshell",     default: 0, null: false
   end
 
 end
