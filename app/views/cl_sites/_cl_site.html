@@ -1,0 +1,5 @@
+<li>
+<%= link_to cl_site.name, cl_site.link_url %> 
+<%= render partial: 'lang', collection: cl_site.content_columns %>
+total_entries: <%= cl_site.total_entries %>, no_matches: <%= cl_site.no_matches %>
+</li>

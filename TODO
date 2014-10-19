@@ -1,1 +1,10 @@
 Put app in production mode (change/setup tokens, secrets, etc)  RACK_ENV
+
+
+similar sites [uses google search results, not regional]
+http://langpop.com/
+
+The standard language popularity index [also not regional]
+http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html
+
+

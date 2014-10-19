@@ -1,3 +1,4 @@
+region,subregion,name,base_url
 US,Alabama,auburn,http://auburn.craigslist.org
 US,Alabama,birmingham,http://bham.craigslist.org
 US,Alabama,dothan,http://dothan.craigslist.org
