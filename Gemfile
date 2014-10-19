@@ -30,6 +30,8 @@ gem 'spring',        group: :development
 
 gem 'rails-csv-fixtures', git: "https://github.com/bfolkens/rails-csv-fixtures.git"
 
+gem 'feedjira'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
