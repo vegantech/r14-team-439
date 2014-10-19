@@ -65,6 +65,7 @@ LANG_LIST =
 
 def self.recognize(str)
   results = Set.new
+  str.downcase!
   LANG_LIST.each do |lang|
     re = Regexp.union lang[:terms]
     newstr = str.gsub(re, ' ')
