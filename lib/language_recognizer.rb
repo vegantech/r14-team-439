@@ -21,7 +21,7 @@ LANG_LIST =
 
   {terms: [/java/, /spring/, /j2ee/, /play/, /swing/, /applet/], language: 'Java', abbrev: 'java'},
 
-  {terms: [/(?<![gt]o.|[a-zA-Z])go(?![a-zA-Z]|.[gt]o|.getter)/], language: 'Go', abbrev: 'go'},
+  {terms: [/(?<![gt]o.|[a-zA-Z])go(?![a-zA-Z]|.[gt]o|.getter)/, /(?<![a-zA-Z])go\s?lang/], language: 'Go', abbrev: 'go'},
 
   {terms: [/(?<![a-zA-Z])c#/], language: 'C#', abbrev: 'csharp'},
 
@@ -69,7 +69,7 @@ def self.recognize(str)
   LANG_LIST.each do |lang|
     re = Regexp.union(lang[:terms])
     newstr = str.gsub(re, ' ')
-    results.add(lang[:language]) if str != newstr
+    results.add(lang[:abbrev]) if str != newstr
     str = newstr
   end
 
