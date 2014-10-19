@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019082710) do
+ActiveRecord::Schema.define(version: 20141019101330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20141019082710) do
     t.integer  "github_push_event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "commit_sha"
   end
 
   add_index "github_commits", ["github_push_event_id"], name: "index_github_commits_on_github_push_event_id", using: :btree
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 20141019082710) do
     t.integer  "github_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "event_time"
   end
 
   add_index "github_push_events", ["github_repo_id"], name: "index_github_push_events_on_github_repo_id", using: :btree
@@ -79,7 +81,7 @@ ActiveRecord::Schema.define(version: 20141019082710) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.string   "commit_count"
+    t.integer  "commit_count"
   end
 
   add_index "github_repos", ["github_user_id"], name: "index_github_repos_on_github_user_id", using: :btree
@@ -96,6 +98,7 @@ ActiveRecord::Schema.define(version: 20141019082710) do
     t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "github_users", ["location_id"], name: "index_github_users_on_location_id", using: :btree
