@@ -19,8 +19,14 @@ class ClSite < ActiveRecord::Base
   #refactor this and move it elsewhere
   def parse_feed url=rss_url, now = Time.now
 
-    puts url
-    f = Feedjira::Feed.fetch_and_parse url
+    options = {
+        user_agent: 'Geolinguist',
+        max_redirects: 2,
+        compress: true
+    }
+
+
+    f = Feedjira::Feed.fetch_and_parse url, options
     puts f.inspect
     if f.last_modified.blank?
       save_and_update_last_fetched now if self.last_fetched.blank?
