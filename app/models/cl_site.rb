@@ -1,6 +1,7 @@
 class ClSite < ActiveRecord::Base
   require 'language_recognizer'
   
+  
   scope :with_content,  -> {where("total_entries > 0 and total_entries - no_matches > 0")}
   
   SUFFIX = "/search/jjj/?excats=12-1-2-1-7-1-1-1-1-1-19-1-1-3-2-1-2-2-2-14-25-25-1-1-1-1-1-1"
@@ -76,5 +77,20 @@ class ClSite < ActiveRecord::Base
   def save_and_update_last_fetched now
     self.last_fetched = now
     save
+  end
+
+
+  require 'nokogiri'
+  require 'open-uri'
+  def force_lang lang = "ruby"
+    raise 'no way' unless lang == "ruby" #LANGS.include? lang
+    l= ::Nokogiri::HTML(open(link_url + "&query=ruby")).
+      css('.pagenum').inner_text.split(' ').last
+
+    self[lang] += l.to_i
+    self.total_entries += l.to_i
+    self.last_fetched = Time.now
+    save
+
   end
 end
